@@ -9,7 +9,7 @@ This is a small app for your console, written in NodeJS with Yargs (https://yarg
 
 ```bash
 ~/ npm i
-~/ node weather.js -h					// for help
+~/ node weather.js -h // for help
 ~/ node weather.js -c Amsterdam -u metric // City: Amsterdam Unit: Celsius
 ```
 
