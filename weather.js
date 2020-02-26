@@ -42,9 +42,12 @@ let requestOptions = {
 request(
     requestOptions,
     (error, response, body) => {
+        //console.log(error);
         let bodyObj = JSON.parse(body);
         if (response.statusCode != 200) {
-            console.log('Some error: ' + bodyObj.message);
+            console.log('HTTP-Error: ' + bodyObj.cod);
+            console.log('Error message: ' + bodyObj.message);
+            process.exit(0);
         }
 
         if (response.statusCode === 200) {
