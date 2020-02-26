@@ -9,6 +9,8 @@ API: https://openweathermap.org/api
 
 **Usage:**
 
+Set '.env' and paste your API KEY.
+
 ```bash
 ~/ npm i
 ~/ node weather.js -h // for help

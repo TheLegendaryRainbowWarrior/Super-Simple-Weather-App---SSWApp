@@ -42,9 +42,12 @@ let requestOptions = {
 request(
     requestOptions,
     (error, response, body) => {
-        if (response.statusCode === 200) {
-            let bodyObj = JSON.parse(body);
+        let bodyObj = JSON.parse(body);
+        if (response.statusCode != 200) {
+            console.log('Some error: ' + bodyObj.message);
+        }
 
+        if (response.statusCode === 200) {
             bodyObj.list.forEach((list, index) => {
                 console.log((index + 1) + '. ' + 'Weather for: ' + list.name);
                 console.log('   ' + 'Country: ' + list.sys.country);
