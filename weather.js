@@ -8,8 +8,8 @@ Author: Gregor Wedlich
 require('dotenv').config();
 
 const
-    request = require('request'),
-    yargs = require('yargs');
+    yargs = require('yargs'),
+    axios = require('axios');
 
 let arguments = yargs
     .option('c', {
@@ -30,35 +30,36 @@ let arguments = yargs
     .help('h')
     .argv;
 
-let requestOptions = {
-    url: "https://api.openweathermap.org/data/2.5/find",
-    qs: {
-        q: arguments.city,
-        apiKey: process.env.API_KEY,
-        units: arguments.units
-    }
-};
 
-request(
-    requestOptions,
-    (error, response, body) => {
-        //console.log(error);
-        let bodyObj = JSON.parse(body);
-        if (response.statusCode != 200) {
-            console.log('HTTP-Error: ' + bodyObj.cod);
-            console.log('Error message: ' + bodyObj.message);
-            process.exit(0);
-        }
+const instance = axios.create({
+    baseURL: 'https://api.openweathermap.org/data/2.5/find',
+    timeout: 1000
+});
 
-        if (response.statusCode === 200) {
-            bodyObj.list.forEach((list, index) => {
-                console.log((index + 1) + '. ' + 'Weather for: ' + list.name);
-                console.log('   ' + 'Country: ' + list.sys.country);
-                console.log('   ' + 'Temp: ' + list.main.temp);
-                console.log('   ' + 'Temp minimal: ' + list.main.temp_min);
-                console.log('   ' + 'Temp maximum: ' + list.main.temp_max);
-                console.log('   ' + 'Temperature feels like: ' + list.main.feels_like);
-            });
+instance.get('/', {
+        params: {
+            q: arguments.city,
+            apiKey: process.env.API_KEY,
+            units: arguments.units
         }
-    }
-);
+    })
+    .then(function (response) {
+        response.data.list.forEach((data, index) => {
+            console.log((index + 1) + '. ' + 'Weather for: ' + data.name);
+            console.log('   ' + 'Country: ' + data.sys.country);
+            console.log('   ' + 'Temp: ' + data.main.temp);
+            console.log('   ' + 'Temp minimal: ' + data.main.temp_min);
+            console.log('   ' + 'Temp maximum: ' + data.main.temp_max);
+            console.log('   ' + 'Temperature feels like: ' + data.main.feels_like);
+        })
+    })
+    .catch(function (error) {
+        if (error.response) {
+            console.log('HTTP-Error: ' + error.response.data.cod);
+            console.log('Error message: ' + error.response.data.message);
+        } else if (error.request) {
+            console.log(error.request);
+        } else {
+            console.log('Error: ' + error.message);
+        }
+    });
