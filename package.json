@@ -13,8 +13,8 @@
   "author": "Gregor Wedlich",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "dotenv": "^8.2.0",
-    "request": "^2.88.2",
     "yargs": "^15.1.0"
   },
   "engines": {
