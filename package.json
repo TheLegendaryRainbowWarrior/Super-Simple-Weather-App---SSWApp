@@ -1,6 +1,6 @@
 {
     "name": "super-simple-weather-app-sswapp",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "NodeJS Openweather Console App with Yargs",
     "main": "weather.js",
     "scripts": {
@@ -13,12 +13,12 @@
     "author": "Gregor Wedlich",
     "license": "ISC",
     "dependencies": {
-        "axios": ">=0.21.0",
-        "dotenv": ">=8.2.0",
-        "yargs": ">=16.1.0"
+        "axios": "0.24.0",
+        "dotenv": "11.0.0",
+        "yargs": "17.3.1"
     },
     "engines": {
-        "node": ">=10"
+        "node": ">=14"
     },
     "repository": {
         "type": "git",
