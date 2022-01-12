@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 Super Simple Weather App - SSWApp
 Weather API: https://openweathermap.org
@@ -10,7 +12,7 @@ const axios = require('axios');
 
 require('dotenv').config();
 
-let arguments = yargs
+const args = yargs
     .option('c', {
         describe: 'Type your City e.g. -c amsterdam or with country code -c amsterdam',
         alias: 'city',
@@ -36,9 +38,9 @@ const instance = axios.create({
 instance
     .get('/weather', {
         params: {
-            q: arguments.city,
+            q: args.city,
             appid: process.env.API_KEY,
-            units: arguments.units,
+            units: args.units,
         },
     })
     .then(function (response) {
