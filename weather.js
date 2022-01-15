@@ -14,7 +14,7 @@ require('dotenv').config();
 
 const args = yargs
     .option('c', {
-        describe: 'Type your City e.g. -c amsterdam or with country code -c amsterdam',
+        describe: 'Type your City e.g. -c amsterdam or with country code -c dresden,us or -c dresden,de',
         alias: 'city',
         type: 'string',
         default: 'Amsterdam',

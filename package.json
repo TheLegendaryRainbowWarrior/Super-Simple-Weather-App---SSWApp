@@ -22,10 +22,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/PrinzMonty/Super-Simple-Weather-App---SSWApp.git"
+        "url": "git+https://github.com/trixxser/Super-Simple-Weather-App---SSWApp.git"
     },
     "bugs": {
-        "url": "https://github.com/PrinzMonty/Super-Simple-Weather-App---SSWApp/issues"
+        "url": "https://github.com/trixxser/Super-Simple-Weather-App---SSWApp/issues"
     },
-    "homepage": "https://github.com/PrinzMonty/Super-Simple-Weather-App---SSWApp#readme"
+    "homepage": "https://github.com/trixxser/Super-Simple-Weather-App---SSWApp#readme"
 }
