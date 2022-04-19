@@ -8,14 +8,15 @@
     }
   ],
   "private": false,
+  "type": "module",
   "bin": {
     "weather": "lib/bin/weather.js"
   },
   "dependencies": {
-    "axios": "0.24.0",
+    "axios": "0.26.1",
     "buntstift": "5.0.1",
-    "dotenv": "11.0.0",
-    "yargs": "17.3.1"
+    "dotenv": "16.0.0",
+    "yargs": "17.4.1"
   },
   "devDependencies": {
     "roboter": "13.1.0"
