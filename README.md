@@ -15,3 +15,11 @@ $ npm i
 $ node lib/bin/weather.js -h # for help
 $ node lib/bin/weather.js -c Amsterdam -u metric # City: Amsterdam Unit: Celsius
 ```
+
+## Running quality assurance
+
+To run quality assurance for this module use [roboter](https://www.npmjs.com/package/roboter):
+
+```shell
+$ npx roboter
+```
