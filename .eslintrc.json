@@ -2,5 +2,8 @@
   "extends": "es/node",
   "parserOptions": {
     "sourceType": "module"
+  },
+  "globals": {
+    "fetch": true
   }
 }
