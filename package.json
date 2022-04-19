@@ -1,31 +1,34 @@
 {
-    "name": "super-simple-weather-app-sswapp",
-    "version": "0.0.2",
-    "description": "NodeJS Openweather Console App with Yargs",
-    "main": "weather.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-        "nodejs",
-        "openweather"
-    ],
-    "author": "Gregor Wedlich",
-    "license": "ISC",
-    "dependencies": {
-        "axios": "0.24.0",
-        "dotenv": "11.0.0",
-        "yargs": "17.3.1"
-    },
-    "engines": {
-        "node": ">=14"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/trixxser/Super-Simple-Weather-App---SSWApp.git"
-    },
-    "bugs": {
-        "url": "https://github.com/trixxser/Super-Simple-Weather-App---SSWApp/issues"
-    },
-    "homepage": "https://github.com/trixxser/Super-Simple-Weather-App---SSWApp#readme"
+  "name": "super-simple-weather-app-sswapp",
+  "version": "0.0.2",
+  "description": "Node.js openweather console app with Yargs.",
+  "contributors": [
+    {
+      "name": "Gregor Wedlich"
+    }
+  ],
+  "private": false,
+  "type": "module",
+  "bin": {
+    "weather": "lib/bin/weather.js"
+  },
+  "dependencies": {
+    "buntstift": "5.0.1",
+    "defekt": "9.1.1",
+    "dotenv": "16.0.0",
+    "yargs": "17.4.1"
+  },
+  "devDependencies": {
+    "roboter": "13.1.0"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PrinzMonty/Super-Simple-Weather-App---SSWApp.git"
+  },
+  "keywords": [
+    "nodejs",
+    "openweather"
+  ],
+  "license": "MIT"
 }
